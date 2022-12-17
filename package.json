@@ -32,15 +32,8 @@
   "node-red": {
     "version": ">=3.0.1",
     "nodes": {
-      "soundweb-server": "soundweb-nodes/soundweb-server.js",
-      "soundweb-AnalogDialer": "soundweb-nodes/soundweb-AnalogDialer.js",
-      "soundweb-GenericControl": "soundweb-nodes/soundweb-GenericControl.js",
-      "soundweb-LevelControl": "soundweb-nodes/soundweb-LevelControl.js",
-      "soundweb-MeterControl": "soundweb-nodes/soundweb-MeterControl.js",
-      "soundweb-RoomCombinerGroup": "soundweb-nodes/soundweb-RoomCombinerGroup.js",
-      "soundweb-RouterControl": "soundweb-nodes/soundweb-RouterControl.js",
-      "soundweb-StateControl": "soundweb-nodes/soundweb-StateControl.js",
-      "soundweb-VoIPDialer": "soundweb-nodes/soundweb-VoIPDialer.js"
+      "soundweb-server": "lib/soundweb-server.js",
+      "soundweb-LevelControl": "lib/soundweb-LevelControl.js"
     }
   },
   "engines": {

@@ -1,0 +1,54 @@
+<script type="text/html" data-template-name="soundweb-LevelControl">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-server"><i class="fa fa-globe"></i> Server</label>
+        <input type="text" id="node-input-server" placeholder="Server">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-address"><i class="fa fa-server"></i> Address</label>
+        <input type="text" id="node-input-address" placeholder="[0,0,0,0,0,0,0,0,0,0]">
+        <input type="hidden" id="node-input-addressType">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="soundweb-LevelControl">
+    <h2>BSS soundweb level control node</h2>
+    <p><em>USAGE:</em></p>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('soundweb-LevelControl',{
+        category: 'BSS Soundweb',
+        color: '#a8a8ff',
+        defaults: {
+            name: { value: "" },
+            server: {
+                value: "",
+                type: "soundweb-server"
+            },
+            address: {
+                value: "",
+                required: true,
+            },
+            addressType: { value: "" }
+        },
+        inputs:1,
+        outputs:1,
+        icon: "bridge.svg",
+        label: function() {
+            return this.name||"soundweb-LevelControl";
+        },
+        oneditprepare: function() {
+            $("#node-input-address").typedInput({
+                type: "bin",
+                types: ["bin"],
+                typeField: "#node-input-addressType"
+            });
+        }
+    });
+</script>
