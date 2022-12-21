@@ -7,7 +7,7 @@
     "example": "examples"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -38,5 +38,8 @@
   },
   "engines": {
     "node": ">=18.12.1"
+  },
+  "devDependencies": {
+    "mocha": "^10.2.0"
   }
 }
