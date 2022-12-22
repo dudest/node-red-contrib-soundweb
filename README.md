@@ -28,12 +28,20 @@ $ npm install node-red-contrib-soundweb
 
 ---
 
+# USAGE
+
+---
+
+# Examples
+
+---
+
 # TODO
 
-- [ ] **bss_lib** *helper library for command encapsulation and decapsulation* 
-- [ ] **soundweb-server** *server node*
-- [ ] **soundweb-LevelControl** *Level control node* 
-- [ ] **soundweb-StateControl** *state control node* 
-- [ ] **soundweb-Preset** *preset recall node*
-- [ ] **Readme** *complete documentation*
-- [ ] **Unit Testing** *write comprehensive unit tests*
+- [ ] **bss_lib :** *helper library for command encapsulation and decapsulation* 
+- [ ] **soundweb-server :** *server node*
+- [ ] **soundweb-LevelControl :** *Level control node* 
+- [ ] **soundweb-StateControl :** *state control node* 
+- [ ] **soundweb-Preset :** *preset recall node*
+- [ ] **Readme :** *complete documentation*
+- [ ] **Unit Testing :** *write comprehensive unit tests*
