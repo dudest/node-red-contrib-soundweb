@@ -16,16 +16,16 @@ describe('bss_lib', function() {
         });
     });
     describe('byteSubstitute', function() {
-        it ('<buffer 01 02 03> should return <buffer 01 1b 82 1b 83>', function() {
-            var actual = bssLib.byteSubstitute(Buffer.from([1, 2, 3]));
-            var expected = Buffer.from([1, 27, 130, 27, 131]);
+        it ('<buffer 02 03 06 15 1b> should return <buffer 1b 82 1b 83 1b 86 1b 95 1b 9b>', function() {
+            var actual = bssLib.byteSubstitute(Buffer.from([2, 3, 6, 21, 27]));
+            var expected = Buffer.from([27, 130, 27, 131, 27, 134, 27, 149, 27, 155]);
             assert.deepEqual(actual, expected);
         });
     });
     describe('byteUnubstitute', function() {
-        it ('<buffer 01 1b 82 1b 83> should return <buffer 01 02 03>', function() {
-            var actual = bssLib.byteUnsubstitute(Buffer.from([1, 27, 130, 27, 131]));
-            var expected = Buffer.from([1, 2, 3]);
+        it ('<buffer 1b 82 1b 83 1b 86 1b 95 1b 9b> should return <buffer 02 03 06 15 1b>', function() {
+            var actual = bssLib.byteUnsubstitute(Buffer.from([27, 130, 27, 131, 27, 134, 27, 149, 27, 155]));
+            var expected = Buffer.from([2, 3, 6, 21, 27]);
             assert.deepEqual(actual, expected);
         });
     });
