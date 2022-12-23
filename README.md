@@ -9,6 +9,7 @@ A collection of nodes for controlling BSS Soundweb devices.
 
 - [Node.js](https://nodejs.org/en/) v18.12.1 or newer
 - [Node-RED](https://nodered.org) v3.0.1 or newer
+
 *untested on earlier versions*
 
 ## Installation
@@ -25,12 +26,12 @@ $ npm install node-red-contrib-soundweb
 # then restart node-red
 ```
 
----
-
 ## Resources
 
 - [Soundweb London DI Kit](https://bssaudio.com/en/site_elements/soundweb-london-di-kit)
 - [Soundweb London 3rd Party Control](https://help.harmanpro.com/Documents/135/Soundweb%20London%203rd%20Party%20Control.pdf)
+
+---
 
 # USAGE
 
