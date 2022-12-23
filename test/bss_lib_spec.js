@@ -2,46 +2,41 @@ const assert = require('assert');
 const bssLib = require('../lib/bss_lib');
 
 
-describe('bss_lib', function() {
+describe('bss_lib.js', function() {
     describe('checkSum', function() {
-        it ('<buffer 01 01> should return <buffer 00>', function() {
-            var actual = bssLib.calculateChecksum(Buffer.from([1, 1]));
-            var expected = Buffer.from([0]);
-            assert.deepEqual(actual, expected);
-        });
-        it ('<buffer 01 01 01> should return <buffer 01>', function() {
-            var actual = bssLib.calculateChecksum(Buffer.from([1, 1, 1]));
-            var expected = Buffer.from([1]);
+        it ('<buffer 01 02 03 04 05 06> should return <buffer 07>', function() {
+            var actual = bssLib.calculateChecksum(Buffer.from([0x01,0x02,0x03,0x04,0x05,0x06]));
+            var expected = Buffer.from([0x07]);
             assert.deepEqual(actual, expected);
         });
     });
     describe('byteSubstitute', function() {
         it ('<buffer 02 03 06 15 1b> should return <buffer 1b 82 1b 83 1b 86 1b 95 1b 9b>', function() {
-            var actual = bssLib.byteSubstitute(Buffer.from([2, 3, 6, 21, 27]));
-            var expected = Buffer.from([27, 130, 27, 131, 27, 134, 27, 149, 27, 155]);
+            var actual = bssLib.byteSubstitute(Buffer.from([0x02,0x03,0x06,0x15,0x1b]));
+            var expected = Buffer.from([0x1b,0x82,0x1b,0x83,0x1b,0x86,0x1b,0x95,0x1b,0x9b]);
             assert.deepEqual(actual, expected);
         });
     });
     describe('byteUnubstitute', function() {
         it ('<buffer 1b 82 1b 83 1b 86 1b 95 1b 9b> should return <buffer 02 03 06 15 1b>', function() {
-            var actual = bssLib.byteUnsubstitute(Buffer.from([27, 130, 27, 131, 27, 134, 27, 149, 27, 155]));
-            var expected = Buffer.from([2, 3, 6, 21, 27]);
+            var actual = bssLib.byteUnsubstitute(Buffer.from([0x1b,0x82,0x1b,0x83,0x1b,0x86,0x1b,0x95,0x1b,0x9b]));
+            var expected = Buffer.from([0x02,0x03,0x06,0x15,0x1b]);
             assert.deepEqual(actual, expected);
         });
     });
     describe('encapsulateCommand', function() {
         it ('<buffer 8d 10 02 03 00 01 0f 00 60 00 34 e8 ff> should return <buffer 02 8d 10 1b 82 1b 83 00 01 0f 00 60 00 34 e8 ff d1 03>',
         function() {
-            var actual = bssLib.encapsulateCommand(Buffer.from([141,16,2,3,0,1,15,0,96,0,52,232,255]));
-            var expected = Buffer.from([2,141,16,27,130,27,131,0,1,15,0,96,0,52,232,255,209,3]);
+            var actual = bssLib.encapsulateCommand(Buffer.from([0x8d,0x10,0x02,0x03,0x00,0x01,0x0f,0x00,0x60,0x00,0x34,0xe8,0xff]));
+            var expected = Buffer.from([0x02,0x8d,0x10,0x1b,0x82,0x1b,0x83,0x00,0x01,0x0f,0x00,0x60,0x00,0x34,0xe8,0xff,0xd1,0x03]);
             assert.deepEqual(actual, expected);
         });
     });
     describe('decapsulateCommand', function() {
         it ('<buffer 02 8d 10 1b 82 1b 83 00 01 0f 00 60 00 34 e8 ff d1 03> should return <buffer 8d 10 02 03 00 01 0f 00 60 00 34 e8 ff>',
         function() {
-            var actual = bssLib.decapsulateCommand(Buffer.from([2,141,16,27,130,27,131,0,1,15,0,96,0,52,232,255,209,3]));
-            var expected = Buffer.from([141,16,2,3,0,1,15,0,96,0,52,232,255]);
+            var actual = bssLib.decapsulateCommand(Buffer.from([0x02,0x8d,0x10,0x1b,0x82,0x1b,0x83,0x00,0x01,0x0f,0x00,0x60,0x00,0x34,0xe8,0xff,0xd1,0x03]));
+            var expected = Buffer.from([0x8d,0x10,0x02,0x03,0x00,0x01,0x0f,0x00,0x60,0x00,0x34,0xe8,0xff]);
             assert.deepEqual(actual, expected);
         });
     });
