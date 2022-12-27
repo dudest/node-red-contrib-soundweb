@@ -48,7 +48,7 @@ All nodes except the `soundweb-Preset` node require an address be specifie. The 
 - Object ID (3 bytes)
 - Parameter ID (2 bytes)
 
-The following bytes have special meanings.The node suite will automatically handle replacement when commands are encapsulated and decapsulated. Be mindfull on nodes requiring an address property that the **non replaced** character is needed in decimal format. 
+The following bytes have special meanings. The node suite will automatically handle replacement when commands are encapsulated and decapsulated. Be mindfull on nodes requiring an address property that the **non replaced** character is needed in decimal format. 
 
 | TYPE   | HEX  | DEC  | HEX replacement | DEC replacement |
 | ------ |:----:| :---:| :-------------: | :-------------: |
@@ -68,8 +68,9 @@ The following bytes have special meanings.The node suite will automatically hand
 
 - [x] **bss_lib :** *helper library for command encapsulation and decapsulation* 
 - [x] **soundweb-server :** *server node*
-- [ ] **soundweb-LevelControl :** *Level control node* 
-- [ ] **soundweb-StateControl :** *state control node* 
-- [ ] **soundweb-Preset :** *preset recall node*
+- [x] **soundweb-dbGain :** *gain control node* 
+- [x] **soundweb-variable :** *variable set node* 
+- [x] **soundweb-Preset :** *preset recall node*
 - [ ] **Readme :** *complete documentation*
 - [ ] **Unit Testing :** *write comprehensive unit tests*
+- [ ] **Improved device feedback :** *feedback parsing is unstable. threadging may need to be implimented*

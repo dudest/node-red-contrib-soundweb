@@ -40,4 +40,76 @@ describe('bss_lib.js', function() {
             assert.deepEqual(actual, expected);
         });
     });
+    describe('getCommandIdBuffer', function() {
+        it ('<buffer 8d 10 02 03 00 01 0f 00 60 00 34 e8 ff> should return <buffer 8d>',
+        function() {
+            var actual = bssLib.getCommandIdBuffer(Buffer.from([0x8d,0x10,0x02,0x03,0x00,0x01,0x0f,0x00,0x60,0x00,0x34,0xe8,0xff]));
+            var expected = Buffer.from([0x8d]);
+            assert.deepEqual(actual, expected);
+        });
+    });
+    describe('getAddressBuffer', function() {
+        it ('<buffer 8d 10 02 03 00 01 0f 00 60 00 34 e8 ff> should return <buffer 10 02 03 00 01 0f 00 60>',
+        function() {
+            var actual = bssLib.getAddressBuffer(Buffer.from([0x8d,0x10,0x02,0x03,0x00,0x01,0x0f,0x00,0x60,0x00,0x34,0xe8,0xff]));
+            var expected = Buffer.from([0x10,0x02,0x03,0x00,0x01,0x0f,0x00,0x60]);
+            assert.deepEqual(actual, expected);
+        });
+    });
+    describe('getDataBuffer', function() {
+        it ('<buffer 8d 10 02 03 00 01 0f 00 60 00 34 e8 ff> should return <buffer 00 34 e8 ff>',
+        function() {
+            var actual = bssLib.getDataBuffer(Buffer.from([0x8d,0x10,0x02,0x03,0x00,0x01,0x0f,0x00,0x60,0x00,0x34,0xe8,0xff]));
+            var expected = Buffer.from([0x00,0x34,0xe8,0xff]);
+            assert.deepEqual(actual, expected);
+        });
+    });
+    describe('setDataPercent', function() {
+        it ('12.5 should return <buffer 00 0c 80 00>',
+        function() {
+            var actual = bssLib.setDataPercent(12.5);
+            var expected = Buffer.from([0x00,0x0c,0x80,0x00]);
+            assert.deepEqual(actual, expected);
+        });
+    });
+    describe('getDataPercent', function() {
+        it ('<buffer 00 0c 80 00> should return 12.5',
+        function() {
+            var actual = bssLib.getDataPercent(Buffer.from([0x00,0x0c,0x80,0x00]));
+            var expected = 12.5;
+            assert.deepEqual(actual, expected);
+        });
+    });
+    describe('setDataDB', function() {
+        it ('-15dB should return <buffer ff fd ef ce>',
+        function() {
+            var actual = bssLib.setDataDB(-15);
+            var expected = Buffer.from([0xff,0xfd,0xef,0xce]);
+            assert.deepEqual(actual, expected);
+        });
+    });
+    describe('getDataDB', function() {
+        it ('<buffer ff fd ef ce> should return -15dB',
+        function() {
+            var actual = bssLib.getDataDB(Buffer.from([0xff,0xfd,0xef,0xce]));
+            var expected = -14.999956513820392;
+            assert.deepEqual(actual, expected);
+        });
+    });
+    describe('intToBuffer', function() {
+        it ('10 should return <buffer 00 00 00 0a>',
+        function() {
+            var actual = bssLib.intToBuffer(10);
+            var expected = Buffer.from([0x00,0x00,0x00,0x0a]);
+            assert.deepEqual(actual, expected);
+        });
+    });
+    describe('bufferToInt', function() {
+        it ('<buffer 00 00 00 0b> should return 11',
+        function() {
+            var actual = bssLib.bufferToInt(Buffer.from([0x00,0x00,0x00,0x0b]));
+            var expected = 11;
+            assert.deepEqual(actual, expected);
+        });
+    });
 });
