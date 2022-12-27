@@ -1,4 +1,4 @@
-<script type="text/html" data-template-name="soundweb-presets">
+<script type="text/html" data-template-name="soundweb-parameterPresets">
     <div class="form-row">
         <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
@@ -16,7 +16,7 @@
 
 </script>
 
-<script type="text/html" data-help-name="soundweb-presets">
+<script type="text/html" data-help-name="soundweb-parameterPresets">
     <h3>Edit Dialog</h3>
     <p><strong>Server Property:</strong> Configuration node responsible for establishing a TCP/IP connection to the Bss Server. Specify IP and Port.</p>
     <h3>Input</h3>
@@ -70,7 +70,7 @@
 </script>
 
 <script type="text/javascript">
-    RED.nodes.registerType("soundweb-presets",{
+    RED.nodes.registerType("soundweb-parameterPresets",{
         category: 'BSS Soundweb',
         color: '#a8a8ff',
         defaults: {
@@ -85,7 +85,7 @@
         outputs:0,
         icon: "bridge.svg",
         label: function() {
-            return this.name||"soundweb-presets";
+            return this.name||"soundweb-parameterPresets";
         }
     });
 </script>

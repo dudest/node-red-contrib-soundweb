@@ -1,0 +1,118 @@
+[
+    {
+        "id": "e2465d3b8b923c86",
+        "type": "tab",
+        "label": "soundweb-variable",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "a95660a4ff2ed021",
+        "type": "comment",
+        "z": "e2465d3b8b923c86",
+        "name": "Set a variable; i.e. mute, source selector, etc.",
+        "info": "",
+        "x": 430,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "330e7234148567cf",
+        "type": "soundweb-variable",
+        "z": "e2465d3b8b923c86",
+        "name": "",
+        "topic": "",
+        "server": "5360e8d16d24bed6",
+        "address": "[0,9,3,0,1,0,0,1]",
+        "addressType": "bin",
+        "x": 350,
+        "y": 200,
+        "wires": [
+            [
+                "cd7df45776dc28aa"
+            ]
+        ]
+    },
+    {
+        "id": "cd7df45776dc28aa",
+        "type": "debug",
+        "z": "e2465d3b8b923c86",
+        "name": "soundweb-variable",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 590,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "555d7e3c31b55735",
+        "type": "inject",
+        "z": "e2465d3b8b923c86",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "0",
+        "payloadType": "num",
+        "x": 150,
+        "y": 180,
+        "wires": [
+            [
+                "330e7234148567cf"
+            ]
+        ]
+    },
+    {
+        "id": "7adee4c287332b92",
+        "type": "inject",
+        "z": "e2465d3b8b923c86",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1",
+        "payloadType": "num",
+        "x": 150,
+        "y": 260,
+        "wires": [
+            [
+                "330e7234148567cf"
+            ]
+        ]
+    },
+    {
+        "id": "5360e8d16d24bed6",
+        "type": "soundweb-server",
+        "host": "10.0.0.234",
+        "port": "1023"
+    }
+]

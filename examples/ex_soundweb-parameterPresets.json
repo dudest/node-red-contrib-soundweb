@@ -1,0 +1,97 @@
+[
+    {
+        "id": "7cf2b46d3c74f8f9",
+        "type": "tab",
+        "label": "soundweb-parameterPresets",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "9ca6fdc63a758c1c",
+        "type": "junction",
+        "z": "7cf2b46d3c74f8f9",
+        "x": 320,
+        "y": 100,
+        "wires": [
+            [
+                "5265b61696c0d77c"
+            ]
+        ]
+    },
+    {
+        "id": "c84978d953990924",
+        "type": "inject",
+        "z": "7cf2b46d3c74f8f9",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "0",
+        "payloadType": "num",
+        "x": 210,
+        "y": 80,
+        "wires": [
+            [
+                "9ca6fdc63a758c1c"
+            ]
+        ]
+    },
+    {
+        "id": "2401fd9804bc171c",
+        "type": "inject",
+        "z": "7cf2b46d3c74f8f9",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1",
+        "payloadType": "num",
+        "x": 210,
+        "y": 140,
+        "wires": [
+            [
+                "9ca6fdc63a758c1c"
+            ]
+        ]
+    },
+    {
+        "id": "5265b61696c0d77c",
+        "type": "soundweb-parameterPresets",
+        "z": "7cf2b46d3c74f8f9",
+        "name": "",
+        "topic": "",
+        "server": "5360e8d16d24bed6",
+        "x": 500,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "5360e8d16d24bed6",
+        "type": "soundweb-server",
+        "host": "10.0.0.234",
+        "port": "1023"
+    }
+]
