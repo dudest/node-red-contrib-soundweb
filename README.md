@@ -7,7 +7,7 @@ A collection of nodes for controlling BSS Soundweb devices.
 
 ## Prerequisites
 
-- [Node.js](https://nodejs.org/en/) v18.12.1 or newer
+- [Node.js](https://nodejs.org/en/) v12.13.0 or newer
 - [Node-RED](https://nodered.org) v3.0.1 or newer
 
 *untested on earlier versions*
