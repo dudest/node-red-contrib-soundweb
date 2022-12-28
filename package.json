@@ -34,6 +34,7 @@
     "nodes": {
       "soundweb-server": "lib/soundweb-server.js",
       "soundweb-dbGain": "lib/soundweb-dbGain.js",
+      "soundweb-percent": "lib/soundweb-percent.js",
       "soundweb-variable": "lib/soundweb-variable.js",
       "soundweb-parameterPresets": "lib/soundweb-parameterPresets.js"
     }

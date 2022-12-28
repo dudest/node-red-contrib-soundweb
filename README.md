@@ -41,7 +41,7 @@ $ npm install node-red-contrib-soundweb
 
 ## Address Property
 
-All nodes except the `soundweb-Preset` node require an address be specifie. The address property is a buffer of exactly 8 bytes. it is comprised of:
+All nodes except the `soundweb-Preset` node require an address be specified. The address property is a buffer of exactly 8 bytes. it is comprised of:
 
 - Node Address (2 bytes)
 - Virtual Device (1 byte)
@@ -58,6 +58,15 @@ The following bytes have special meanings. The node suite will automatically han
 | NAK    | 0x15 | 21   | 0x1B, 0x95      | 27, 149         |
 | Escape | 0x1B | 27   | 0x1B, 0x9B      | 27, 155         |
 
+## Feedback Subscription
+
+Nodes that subscribe to a variable for feedback will receive updates via their outlets. This is meant to keep their state in sync with the BSS Soundweb unit. By convention, the Soundweb device does not send feedback to the caller.
+
+What this means is: 
+- When a control is changed directly from node-red, the Soundweb unit will not send a feedback update.
+- When a variable is changed from Audio Architect, London Architect, or some other means, an update will be sent to node-red.
+- When a preset is recalled, an update will be sent to all subscribers.
+
 ---
 
 # Examples
@@ -70,6 +79,16 @@ Control a level fader using dB value.
 
 ```
 [{"id":"b808bfbecab9467d","type":"tab","label":"soundweb-dbGain","disabled":false,"info":""},{"id":"039149f2e96d9e36","type":"junction","z":"b808bfbecab9467d","x":260,"y":180,"wires":[["01d5502d15917b77"]]},{"id":"75be45758a7b2fa9","type":"debug","z":"b808bfbecab9467d","name":"soundweb-dbGain","active":false,"tosidebar":true,"console":false,"tostatus":true,"complete":"payload","targetType":"msg","statusVal":"payload","statusType":"auto","x":610,"y":180,"wires":[]},{"id":"01d5502d15917b77","type":"soundweb-dbGain","z":"b808bfbecab9467d","name":"","topic":"","server":"5360e8d16d24bed6","address":"[0,9,3,0,1,0,0,0]","addressType":"bin","x":390,"y":180,"wires":[["75be45758a7b2fa9"]]},{"id":"32b96062ce029306","type":"inject","z":"b808bfbecab9467d","name":"","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"-50","payloadType":"num","x":150,"y":100,"wires":[["039149f2e96d9e36"]]},{"id":"a6646a6c14e240f8","type":"inject","z":"b808bfbecab9467d","name":"","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"0","payloadType":"num","x":150,"y":180,"wires":[["039149f2e96d9e36"]]},{"id":"1bf5690f659c3e4f","type":"inject","z":"b808bfbecab9467d","name":"","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"5","payloadType":"num","x":150,"y":260,"wires":[["039149f2e96d9e36"]]},{"id":"49c758e4300cb68e","type":"comment","z":"b808bfbecab9467d","name":"Control a level fader","info":"","x":390,"y":100,"wires":[]},{"id":"5360e8d16d24bed6","type":"soundweb-server","host":"10.0.0.234","port":"1023"}]
+```
+
+## soundweb-precent
+
+Control a parameter using a percentage value.
+
+![soundweb-percent](images/ex_soundweb-percent.png)
+
+```
+[{"id":"dcc82e90063b7d69","type":"tab","label":"soundweb-percent","disabled":false,"info":"","env":[]},{"id":"2b7b9d58a4add5c4","type":"junction","z":"dcc82e90063b7d69","x":360,"y":220,"wires":[["64a22bbbf00e6043"]]},{"id":"64a22bbbf00e6043","type":"soundweb-percent","z":"dcc82e90063b7d69","name":"","topic":"","server":"5360e8d16d24bed6","address":"[0,9,3,0,1,0,78,32]","addressType":"bin","x":490,"y":220,"wires":[["192ce9168c51052f"]]},{"id":"412b5ff477d8a695","type":"inject","z":"dcc82e90063b7d69","name":"","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"0","payloadType":"num","x":250,"y":160,"wires":[["2b7b9d58a4add5c4"]]},{"id":"192ce9168c51052f","type":"debug","z":"dcc82e90063b7d69","name":"soundweb-percent","active":false,"tosidebar":true,"console":false,"tostatus":true,"complete":"payload","targetType":"msg","statusVal":"payload","statusType":"auto","x":710,"y":220,"wires":[]},{"id":"d974b7ba0d93822b","type":"inject","z":"dcc82e90063b7d69","name":"","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"50","payloadType":"num","x":250,"y":220,"wires":[["2b7b9d58a4add5c4"]]},{"id":"97031a3c7731d82f","type":"inject","z":"dcc82e90063b7d69","name":"","props":[{"p":"payload"},{"p":"topic","vt":"str"}],"repeat":"","crontab":"","once":false,"onceDelay":0.1,"topic":"","payload":"100","payloadType":"num","x":250,"y":280,"wires":[["2b7b9d58a4add5c4"]]},{"id":"c7ee133cd1f32866","type":"comment","z":"dcc82e90063b7d69","name":"Control by setting a percentage value","info":"","x":530,"y":160,"wires":[]},{"id":"5360e8d16d24bed6","type":"soundweb-server","host":"10.0.0.234","port":"1023"}]
 ```
 
 ## soundweb-variable
