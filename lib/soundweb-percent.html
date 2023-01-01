@@ -22,6 +22,8 @@
 </script>
 
 <script type="text/html" data-help-name="soundweb-percent">
+    <h3>Usage</h3>
+    <p>A multiplication factor is used to encode for fixed-point fractional values. This message type and data type can be used on any control.</p>
     <h3>Edit Dialog</h3>
     <p><strong>Server Property:</strong> Configuration node responsible for establishing a TCP/IP connection to the Bss Server. Specify IP and Port.</p>
     <p><strong>Address Property:</strong> A buffer of exactly 8 bytes. (specify in <em>decimal</em> format)</p>
@@ -32,7 +34,7 @@
         <li>Parameter ID (2 bytes)</li>
     </ul>
     <h3>Input</h3>
-    <p><code>msg.payload</code> can be an float value between 0% and 100%.</p>
+    <p><code>msg.payload</code> must be a number.</p>
     <h3>Output</h3>
     <p>If subscription succeeds, the node output will provide feedback from server.</p>
     <h3>Reference</h3>
