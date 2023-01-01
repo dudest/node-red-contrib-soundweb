@@ -22,6 +22,8 @@
 </script>
 
 <script type="text/html" data-help-name="soundweb-dbGain">
+    <h3>Usage</h3>
+    <p>This data type is used for gains objects that have fader law. This is a sub-ranged law with a linear portion between +10dB and -10dB and a logarithmic portion from -10dB down to -100dB.</p>
     <h3>Edit Dialog</h3>
     <p><strong>Server Property:</strong> Configuration node responsible for establishing a TCP/IP connection to the Bss Server. Specify IP and Port.</p>
     <p><strong>Address Property:</strong> A buffer of exactly 8 bytes. (specify in <em>decimal</em> format)</p>
@@ -32,7 +34,7 @@
         <li>Parameter ID (2 bytes)</li>
     </ul>
     <h3>Input</h3>
-    <p><code>msg.payload</code> can be an float value between -80dB and +10dB.</p>
+    <p><code>msg.payload</code> must be a number.</p>
     <h3>Output</h3>
     <p>If subscription succeeds, the node output will provide feedback from server.</p>
     <h3>Reference</h3>
