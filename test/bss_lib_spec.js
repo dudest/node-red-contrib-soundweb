@@ -64,6 +64,22 @@ describe('bss_lib.js', function() {
             assert.deepEqual(actual, expected);
         });
     });
+    describe('encDiscrete', function () {
+        it('10 should return <buffer 00 00 00 0a>',
+            function () {
+                var actual = bssLib.encDiscrete(10);
+                var expected = Buffer.from([0x00, 0x00, 0x00, 0x0a]);
+                assert.deepEqual(actual, expected);
+            });
+    });
+    describe('decDiscrete', function () {
+        it('<buffer 00 00 00 0b> should return 11',
+            function () {
+                var actual = bssLib.decDiscrete(Buffer.from([0x00, 0x00, 0x00, 0x0b]));
+                var expected = 11;
+                assert.deepEqual(actual, expected);
+            });
+    });
     describe('encPercent', function() {
         it ('12.5 should return <buffer 00 0c 80 00>',
         function() {
@@ -93,22 +109,6 @@ describe('bss_lib.js', function() {
         function() {
             var actual = bssLib.decGain(Buffer.from([0xff,0xfd,0xef,0xce]));
             var expected = -14.999956513820392;
-            assert.deepEqual(actual, expected);
-        });
-    });
-    describe('encDiscrete', function() {
-        it ('10 should return <buffer 00 00 00 0a>',
-        function() {
-            var actual = bssLib.encDiscrete(10);
-            var expected = Buffer.from([0x00,0x00,0x00,0x0a]);
-            assert.deepEqual(actual, expected);
-        });
-    });
-    describe('decDiscrete', function() {
-        it ('<buffer 00 00 00 0b> should return 11',
-        function() {
-            var actual = bssLib.decDiscrete(Buffer.from([0x00,0x00,0x00,0x0b]));
-            var expected = 11;
             assert.deepEqual(actual, expected);
         });
     });
