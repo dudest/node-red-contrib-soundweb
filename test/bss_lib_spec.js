@@ -105,11 +105,59 @@ describe('bss_lib.js', function() {
         });
     });
     describe('decGain', function() {
-        it ('<buffer ff fd ef ce> should return -15dB',
+        it('<buffer ff fd ef ce> should return roughly -15dB (-14.999956513820392)',
         function() {
             var actual = bssLib.decGain(Buffer.from([0xff,0xfd,0xef,0xce]));
             var expected = -14.999956513820392;
             assert.deepEqual(actual, expected);
         });
+    });
+    describe('encScalaLinear', function() {
+        it ('5 should return <buffer 00 00 c3 50>',
+        function() {
+            var actual = bssLib.encScalarLinear(5);
+            var expected = Buffer.from([0x00,0x00,0xc3,0x50]);
+            assert.deepEqual(actual, expected);
+        });
+    });
+    describe('decScalarLinear', function() {
+        it ('<buffer 00 00 c3 50> should return 5',
+        function() {
+            var actual = bssLib.decScalarLinear(Buffer.from([0x00,0x00,0xc3,0x50]));
+            var expected = 5;
+            assert.deepEqual(actual, expected);
+        });
+    });
+    describe('encDelay', function () {
+        it('5 should return <buffer 00 00 01 e0>',
+            function () {
+                var actual = bssLib.encDelay(5);
+                var expected = Buffer.from([0x00, 0x00, 0x01, 0xe0]);
+                assert.deepEqual(actual, expected);
+            });
+    });
+    describe('decDelay', function () {
+        it('<buffer 00 00 01 e0> should return 5',
+            function () {
+                var actual = bssLib.decDelay(Buffer.from([0x00, 0x00, 0x01, 0xe0]));
+                var expected = 5;
+                assert.deepEqual(actual, expected);
+            });
+    });
+    describe('encFrequencyOrSpeed', function () {
+        it('5 should return <buffer 00 0a aa 5a>',
+            function () {
+                var actual = bssLib.encFrequencyOrSpeed(5);
+                var expected = Buffer.from([0x00, 0x0a, 0xaa, 0x5a]);
+                assert.deepEqual(actual, expected);
+            });
+    });
+    describe('decFrequencyOrSpeed', function () {
+        it('<buffer 00 0a aa 5a> should return roughly 5 (4.999999950079738)',
+            function () {
+                var actual = bssLib.decFrequencyOrSpeed(Buffer.from([0x00, 0x0a, 0xaa, 0x5a]));
+                var expected = 4.999999950079738;
+                assert.deepEqual(actual, expected);
+            });
     });
 });
