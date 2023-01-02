@@ -37,6 +37,7 @@
       "soundweb-percent": "lib/soundweb-percent.js",
       "soundweb-discrete": "lib/soundweb-discrete.js",
       "soundweb-scalarLinear": "lib/soundweb-scalarLinear.js",
+      "soundweb-delay": "lib/soundweb-delay.js",
       "soundweb-venuePresets": "lib/soundweb-venuePresets.js",
       "soundweb-parameterPresets": "lib/soundweb-parameterPresets.js",
       "soundweb-variable": "lib/soundweb-variable.js"
