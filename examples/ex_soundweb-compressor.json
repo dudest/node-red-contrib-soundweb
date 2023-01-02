@@ -1,0 +1,372 @@
+[
+    {
+        "id": "72d99cfa03d040a3",
+        "type": "tab",
+        "label": "Compressor",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "4640b6d3fa5c7984",
+        "type": "soundweb-scalarLinear",
+        "z": "72d99cfa03d040a3",
+        "name": "threshold",
+        "topic": "",
+        "server": "452ed4c5da9c7ed8",
+        "address": "[0,9,3,0,1,2,0,1]",
+        "addressType": "bin",
+        "x": 300,
+        "y": 220,
+        "wires": [
+            [
+                "8003c160ed4c1730"
+            ]
+        ]
+    },
+    {
+        "id": "df6dae7a035bd8ea",
+        "type": "soundweb-speed",
+        "z": "72d99cfa03d040a3",
+        "name": "attack",
+        "topic": "",
+        "server": "452ed4c5da9c7ed8",
+        "address": "[0,9,3,0,1,2,0,3]",
+        "addressType": "bin",
+        "x": 290,
+        "y": 440,
+        "wires": [
+            [
+                "238e57e7792123e4"
+            ]
+        ]
+    },
+    {
+        "id": "10baba041c3f615c",
+        "type": "soundweb-speed",
+        "z": "72d99cfa03d040a3",
+        "name": "release",
+        "topic": "",
+        "server": "452ed4c5da9c7ed8",
+        "address": "[0,9,3,0,1,2,0,4]",
+        "addressType": "bin",
+        "x": 300,
+        "y": 540,
+        "wires": [
+            [
+                "3c5907ced2b6d0b4"
+            ]
+        ]
+    },
+    {
+        "id": "67a3f1da0d7f6b7a",
+        "type": "soundweb-scalarLinear",
+        "z": "72d99cfa03d040a3",
+        "name": "ratio",
+        "topic": "",
+        "server": "452ed4c5da9c7ed8",
+        "address": "[0,9,3,0,1,2,0,2]",
+        "addressType": "bin",
+        "x": 290,
+        "y": 340,
+        "wires": [
+            [
+                "ea7aed5e085daafb"
+            ]
+        ]
+    },
+    {
+        "id": "fcc71a001ef1cbc3",
+        "type": "soundweb-scalarLinear",
+        "z": "72d99cfa03d040a3",
+        "name": "gain",
+        "topic": "",
+        "server": "452ed4c5da9c7ed8",
+        "address": "[0,9,3,0,1,2,0,7]",
+        "addressType": "bin",
+        "x": 290,
+        "y": 660,
+        "wires": [
+            [
+                "c2572c4ee547c0b3"
+            ]
+        ]
+    },
+    {
+        "id": "425427fe67356d05",
+        "type": "soundweb-discrete",
+        "z": "72d99cfa03d040a3",
+        "name": "auto release",
+        "topic": "",
+        "server": "452ed4c5da9c7ed8",
+        "address": "[0,9,3,0,1,2,0,8]",
+        "addressType": "bin",
+        "x": 310,
+        "y": 780,
+        "wires": [
+            [
+                "59148c1f7d63927e"
+            ]
+        ]
+    },
+    {
+        "id": "de53533a8d22545e",
+        "type": "soundweb-discrete",
+        "z": "72d99cfa03d040a3",
+        "name": "bypass",
+        "topic": "",
+        "server": "452ed4c5da9c7ed8",
+        "address": "[0,9,3,0,1,2,0,0]",
+        "addressType": "bin",
+        "x": 300,
+        "y": 120,
+        "wires": [
+            [
+                "8f3feb89ea5dc13f"
+            ]
+        ]
+    },
+    {
+        "id": "8f3feb89ea5dc13f",
+        "type": "ui_switch",
+        "z": "72d99cfa03d040a3",
+        "name": "",
+        "label": "Bypass",
+        "tooltip": "",
+        "group": "63eb1d6b748fc43d",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 120,
+        "y": 120,
+        "wires": [
+            [
+                "de53533a8d22545e"
+            ]
+        ]
+    },
+    {
+        "id": "8003c160ed4c1730",
+        "type": "ui_numeric",
+        "z": "72d99cfa03d040a3",
+        "name": "",
+        "label": "Threshold",
+        "tooltip": "",
+        "group": "63eb1d6b748fc43d",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": false,
+        "topic": "topic",
+        "topicType": "msg",
+        "format": "{{value}}dBu",
+        "min": "-30",
+        "max": "20",
+        "step": "0.1",
+        "className": "",
+        "x": 120,
+        "y": 220,
+        "wires": [
+            [
+                "4640b6d3fa5c7984"
+            ]
+        ]
+    },
+    {
+        "id": "ea7aed5e085daafb",
+        "type": "ui_numeric",
+        "z": "72d99cfa03d040a3",
+        "name": "",
+        "label": "Ratio",
+        "tooltip": "",
+        "group": "63eb1d6b748fc43d",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": false,
+        "topic": "topic",
+        "topicType": "msg",
+        "format": "{{value}}:1",
+        "min": "1.02",
+        "max": "20.1",
+        "step": "0.01",
+        "className": "",
+        "x": 110,
+        "y": 340,
+        "wires": [
+            [
+                "67a3f1da0d7f6b7a"
+            ]
+        ]
+    },
+    {
+        "id": "238e57e7792123e4",
+        "type": "ui_numeric",
+        "z": "72d99cfa03d040a3",
+        "name": "",
+        "label": "Attack",
+        "tooltip": "",
+        "group": "63eb1d6b748fc43d",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "format": "{{value}}ms",
+        "min": "50",
+        "max": "200",
+        "step": 1,
+        "className": "",
+        "x": 110,
+        "y": 440,
+        "wires": [
+            [
+                "df6dae7a035bd8ea"
+            ]
+        ]
+    },
+    {
+        "id": "3c5907ced2b6d0b4",
+        "type": "ui_numeric",
+        "z": "72d99cfa03d040a3",
+        "name": "",
+        "label": "Release",
+        "tooltip": "",
+        "group": "63eb1d6b748fc43d",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": false,
+        "topic": "topic",
+        "topicType": "msg",
+        "format": "{{value}}ms",
+        "min": "5",
+        "max": "500",
+        "step": 1,
+        "className": "",
+        "x": 120,
+        "y": 540,
+        "wires": [
+            [
+                "10baba041c3f615c"
+            ]
+        ]
+    },
+    {
+        "id": "c2572c4ee547c0b3",
+        "type": "ui_numeric",
+        "z": "72d99cfa03d040a3",
+        "name": "",
+        "label": "Gain",
+        "tooltip": "",
+        "group": "63eb1d6b748fc43d",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "format": "{{value}}dB",
+        "min": "-20",
+        "max": "20",
+        "step": 1,
+        "className": "",
+        "x": 110,
+        "y": 660,
+        "wires": [
+            [
+                "fcc71a001ef1cbc3"
+            ]
+        ]
+    },
+    {
+        "id": "59148c1f7d63927e",
+        "type": "ui_switch",
+        "z": "72d99cfa03d040a3",
+        "name": "",
+        "label": "Auto Release",
+        "tooltip": "",
+        "group": "63eb1d6b748fc43d",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 140,
+        "y": 780,
+        "wires": [
+            [
+                "425427fe67356d05"
+            ]
+        ]
+    },
+    {
+        "id": "98e02e3390500d63",
+        "type": "comment",
+        "z": "72d99cfa03d040a3",
+        "name": "Compressor example",
+        "info": "",
+        "x": 160,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "452ed4c5da9c7ed8",
+        "type": "soundweb-server",
+        "host": "10.0.0.234",
+        "port": "1023"
+    },
+    {
+        "id": "63eb1d6b748fc43d",
+        "type": "ui_group",
+        "name": "Compressor",
+        "tab": "7d1e9ef79062113d",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "7d1e9ef79062113d",
+        "type": "ui_tab",
+        "name": "BSS Soundweb",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
