@@ -1,4 +1,4 @@
-<script type="text/html" data-template-name="soundweb-parameterPresets">
+<script type="text/html" data-template-name="soundweb-venuePresets">
     <div class="form-row">
         <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
@@ -16,9 +16,9 @@
 
 </script>
 
-<script type="text/html" data-help-name="soundweb-parameterPresets">
+<script type="text/html" data-help-name="soundweb-venuePresets">
     <h3>Usage</h3>
-    <p>Recalls a <strong>parameter preset</strong> by it's index number.</p>
+    <p>Recalls a <strong>venue preset</strong> by it's index number.</p>
     <h3>Edit Dialog</h3>
     <p><strong>Server Property:</strong> Configuration node responsible for establishing a TCP/IP connection to the Bss Server. Specify IP and Port.</p>
     <h3>Input</h3>
@@ -26,7 +26,7 @@
 </script>
 
 <script type="text/javascript">
-    RED.nodes.registerType("soundweb-parameterPresets",{
+    RED.nodes.registerType("soundweb-venuePresets",{
         category: 'BSS Soundweb',
         color: '#a8a8ff',
         defaults: {
@@ -41,7 +41,7 @@
         outputs:0,
         icon: "bridge.svg",
         label: function() {
-            return this.name||"soundweb-parameterPresets";
+            return this.name||"soundweb-venuePresets";
         }
     });
 </script>

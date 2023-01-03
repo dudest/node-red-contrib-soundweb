@@ -1,4 +1,4 @@
-<script type="text/html" data-template-name="soundweb-dbGain">
+<script type="text/html" data-template-name="soundweb-speed">
     <div class="form-row">
         <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
@@ -21,9 +21,13 @@
     </div>
 </script>
 
-<script type="text/html" data-help-name="soundweb-dbGain">
+<script type="text/html" data-help-name="soundweb-speed">
     <h3>Usage</h3>
-    <p>This data type is used for gains objects that have fader law. This is a sub-ranged law with a linear portion between +10dB and -10dB and a logarithmic portion from -10dB down to -100dB.</p>
+    <p>Speed is specified in milliseconds. Examples of the types of controls that use this data type are as follows:</p>
+    <ul>
+        <li>Compressor attack</li>
+        <li>Compressor release</li>
+    </ul>
     <h3>Edit Dialog</h3>
     <p><strong>Server Property:</strong> Configuration node responsible for establishing a TCP/IP connection to the Bss Server. Specify IP and Port.</p>
     <p><strong>Address Property:</strong> A buffer of exactly 8 bytes. (specify in <em>decimal</em> format)</p>
@@ -86,7 +90,7 @@
 </script>
 
 <script type="text/javascript">
-    RED.nodes.registerType("soundweb-dbGain",{
+    RED.nodes.registerType("soundweb-speed",{
         category: 'BSS Soundweb',
         color: '#a8a8ff',
         defaults: {
@@ -106,7 +110,7 @@
         outputs:1,
         icon: "bridge.svg",
         label: function() {
-            return this.name||"soundweb-dbGain";
+            return this.name||"soundweb-speed";
         },
         oneditprepare: function() {
             $("#node-input-address").typedInput({

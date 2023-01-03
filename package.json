@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-soundweb",
-  "version": "0.0.4",
+  "version": "1.0.0",
   "description": "A collection of nodes for controlling BSS soundweb devices.",
   "main": "soundweb-server.js",
   "directories": {
@@ -35,8 +35,14 @@
       "soundweb-server": "lib/soundweb-server.js",
       "soundweb-dbGain": "lib/soundweb-dbGain.js",
       "soundweb-percent": "lib/soundweb-percent.js",
-      "soundweb-variable": "lib/soundweb-variable.js",
-      "soundweb-parameterPresets": "lib/soundweb-parameterPresets.js"
+      "soundweb-discrete": "lib/soundweb-discrete.js",
+      "soundweb-scalarLinear": "lib/soundweb-scalarLinear.js",
+      "soundweb-delay": "lib/soundweb-delay.js",
+      "soundweb-frequency": "lib/soundweb-frequency.js",
+      "soundweb-speed": "lib/soundweb-speed.js",
+      "soundweb-venuePresets": "lib/soundweb-venuePresets.js",
+      "soundweb-parameterPresets": "lib/soundweb-parameterPresets.js",
+      "soundweb-variable": "lib/soundweb-variable.js"
     }
   },
   "engines": {

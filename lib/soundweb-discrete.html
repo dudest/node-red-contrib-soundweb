@@ -1,4 +1,4 @@
-<script type="text/html" data-template-name="soundweb-dbGain">
+<script type="text/html" data-template-name="soundweb-discrete">
     <div class="form-row">
         <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
@@ -21,9 +21,18 @@
     </div>
 </script>
 
-<script type="text/html" data-help-name="soundweb-dbGain">
-    <h3>Usage</h3>
-    <p>This data type is used for gains objects that have fader law. This is a sub-ranged law with a linear portion between +10dB and -10dB and a logarithmic portion from -10dB down to -100dB.</p>
+<script type="text/html" data-help-name="soundweb-discrete">
+    <h3>Usage:</h3>
+    <p>This data type not encoded. The value is sent as it is, without any scaling. It typically represents enumerated controls, or controls where the value is an integer. Examples of where this type of data is used are the following controls:</p>
+    <ul>
+        <li>Input card gain</li>
+        <li>Crossover filter type</li>
+        <li>Parametric filter slope</li>
+        <li>Parametric filter type</li>
+        <li>Gain object phase</li>
+        <li>Expander ratio</li>
+        <li>High pass filter type</li>
+    </ul>
     <h3>Edit Dialog</h3>
     <p><strong>Server Property:</strong> Configuration node responsible for establishing a TCP/IP connection to the Bss Server. Specify IP and Port.</p>
     <p><strong>Address Property:</strong> A buffer of exactly 8 bytes. (specify in <em>decimal</em> format)</p>
@@ -86,7 +95,7 @@
 </script>
 
 <script type="text/javascript">
-    RED.nodes.registerType("soundweb-dbGain",{
+    RED.nodes.registerType("soundweb-discrete",{
         category: 'BSS Soundweb',
         color: '#a8a8ff',
         defaults: {
@@ -106,7 +115,7 @@
         outputs:1,
         icon: "bridge.svg",
         label: function() {
-            return this.name||"soundweb-dbGain";
+            return this.name||"soundweb-discrete";
         },
         oneditprepare: function() {
             $("#node-input-address").typedInput({

@@ -22,71 +22,13 @@
 </script>
 
 <script type="text/html" data-help-name="soundweb-variable">
-    <h3>Edit Dialog</h3>
-    <p><strong>Server Property:</strong> Configuration node responsible for establishing a TCP/IP connection to the Bss Server. Specify IP and Port.</p>
-    <p><strong>Address Property:</strong> A buffer of exactly 8 bytes. (specify in <em>decimal</em> format)</p>
-    <ul>
-        <li>Node Address (2 bytes)</li>
-        <li>Virtual Device (1 byte)</li>
-        <li>Object ID (3 bytes)</li>
-        <li>Parameter ID (2 bytes)</li>
-    </ul>
-    <h3>Input</h3>
-    <p><code>msg.payload</code> can be an integer value between greater than or equal to 0.</p>
-    <h3>Output</h3>
-    <p>If subscription succeeds, the node output will provide feedback from server.</p>
-    <h3>Reference</h3>
-    <p>Reserved characters and <strong>byte replacement</strong>. Please consider this when entering the <strong>edit</strong> dialog's <strong>address</strong> property.</p>
-    <table>
-        <tr>
-            <th>TYPE</th>
-            <th>HEX</th>
-            <th>DEC</th>
-            <th>HEX replacement</th>
-            <th>DEC replacement</th>
-        </tr>
-        <tr>
-            <th>STX</th>
-            <th>0x02</th>
-            <th>2</th>
-            <th>0x1B, 0x82</th>
-            <th>27, 130</th>
-        </tr>
-        <tr>
-            <th>ETX</th>
-            <th>0x03</th>
-            <th>3</th>
-            <th>0x1B, 0x83</th>
-            <th>27, 131</th>
-        </tr>
-        <tr>
-            <th>ACK</th>
-            <th>0x06</th>
-            <th>6</th>
-            <th>0x1B, 0x86</th>
-            <th>27, 134</th>
-        </tr>
-        <tr>
-            <th>NAK</th>
-            <th>0x15</th>
-            <th>21</th>
-            <th>0x1B, 0x95</th>
-            <th>27, 149</th>
-        </tr>
-        <tr>
-            <th>Escape</th>
-            <th>0x1B</th>
-            <th>27</th>
-            <th>0x1B, 0x9B</th>
-            <th>27, 155</th>
-        </tr>
-    </table>
+    <p>This node has been depreciated. Please use <code>soundweb-discrete</code> instead</p>
 </script>
 
 <script type="text/javascript">
     RED.nodes.registerType("soundweb-variable",{
         category: 'BSS Soundweb',
-        color: '#a8a8ff',
+        color: '#ff0000',
         defaults: {
             name: { value: "" },
             topic: { value: "" },
