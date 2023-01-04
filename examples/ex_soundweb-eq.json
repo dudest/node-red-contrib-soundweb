@@ -1,0 +1,474 @@
+[
+    {
+        "id": "7d86966d10d47c71",
+        "type": "tab",
+        "label": "EQ",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "42562be3ad472680",
+        "type": "soundweb-frequency",
+        "z": "7d86966d10d47c71",
+        "name": "frequency",
+        "topic": "",
+        "server": "452ed4c5da9c7ed8",
+        "address": "[0,9,3,0,1,1,0,1]",
+        "addressType": "bin",
+        "x": 520,
+        "y": 300,
+        "wires": [
+            [
+                "e976a0c5539b5851"
+            ]
+        ]
+    },
+    {
+        "id": "b3eb9eeb4c070a9d",
+        "type": "soundweb-discrete",
+        "z": "7d86966d10d47c71",
+        "name": "type",
+        "topic": "",
+        "server": "452ed4c5da9c7ed8",
+        "address": "[0,9,3,0,1,1,0,4]",
+        "addressType": "bin",
+        "x": 510,
+        "y": 60,
+        "wires": [
+            [
+                "528a8db11ce5f0d3"
+            ]
+        ]
+    },
+    {
+        "id": "d26184a9d02ae9cd",
+        "type": "soundweb-discrete",
+        "z": "7d86966d10d47c71",
+        "name": "slope",
+        "topic": "",
+        "server": "452ed4c5da9c7ed8",
+        "address": "[0,9,3,0,1,1,0,6]",
+        "addressType": "bin",
+        "x": 510,
+        "y": 180,
+        "wires": [
+            [
+                "757bf1bf10db5bd2"
+            ]
+        ]
+    },
+    {
+        "id": "34ee0f196b06612b",
+        "type": "soundweb-scalarLinear",
+        "z": "7d86966d10d47c71",
+        "name": "width",
+        "topic": "",
+        "server": "452ed4c5da9c7ed8",
+        "address": "[0,9,3,0,1,1,0,3]",
+        "addressType": "bin",
+        "x": 510,
+        "y": 540,
+        "wires": [
+            [
+                "75629b6a0f78c839"
+            ]
+        ]
+    },
+    {
+        "id": "e9d7d17eeaa5ce79",
+        "type": "soundweb-discrete",
+        "z": "7d86966d10d47c71",
+        "name": "bypass",
+        "topic": "",
+        "server": "452ed4c5da9c7ed8",
+        "address": "[0,9,3,0,1,1,0,0]",
+        "addressType": "bin",
+        "x": 520,
+        "y": 680,
+        "wires": [
+            [
+                "69645405f0d0d127"
+            ]
+        ]
+    },
+    {
+        "id": "113ba69ff66db36b",
+        "type": "soundweb-scalarLinear",
+        "z": "7d86966d10d47c71",
+        "name": "boost/cut",
+        "topic": "",
+        "server": "452ed4c5da9c7ed8",
+        "address": "[0,9,3,0,1,1,0,2]",
+        "addressType": "bin",
+        "x": 520,
+        "y": 420,
+        "wires": [
+            [
+                "43dec873f13af530"
+            ]
+        ]
+    },
+    {
+        "id": "75629b6a0f78c839",
+        "type": "ui_numeric",
+        "z": "7d86966d10d47c71",
+        "name": "Width 1",
+        "label": "",
+        "tooltip": "",
+        "group": "d0210edf282b4ca2",
+        "order": 11,
+        "width": "3",
+        "height": 1,
+        "wrap": false,
+        "passthru": false,
+        "topic": "topic",
+        "topicType": "msg",
+        "format": "{{value}} Oct",
+        "min": "0.01",
+        "max": "4",
+        "step": "0.01",
+        "className": "",
+        "x": 340,
+        "y": 540,
+        "wires": [
+            [
+                "34ee0f196b06612b"
+            ]
+        ]
+    },
+    {
+        "id": "528a8db11ce5f0d3",
+        "type": "ui_dropdown",
+        "z": "7d86966d10d47c71",
+        "name": "Type 1",
+        "label": "",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "d0210edf282b4ca2",
+        "order": 7,
+        "width": "3",
+        "height": 1,
+        "passthru": false,
+        "multiple": false,
+        "options": [
+            {
+                "label": "Bell",
+                "value": 0,
+                "type": "num"
+            },
+            {
+                "label": "Low Shelf",
+                "value": 1,
+                "type": "num"
+            },
+            {
+                "label": "High Shelf",
+                "value": 2,
+                "type": "num"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 330,
+        "y": 60,
+        "wires": [
+            [
+                "b3eb9eeb4c070a9d"
+            ]
+        ]
+    },
+    {
+        "id": "757bf1bf10db5bd2",
+        "type": "ui_dropdown",
+        "z": "7d86966d10d47c71",
+        "name": "Slope 1",
+        "label": "",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "d0210edf282b4ca2",
+        "order": 8,
+        "width": "3",
+        "height": 1,
+        "passthru": false,
+        "multiple": false,
+        "options": [
+            {
+                "label": "6 dB/Oct",
+                "value": 0,
+                "type": "num"
+            },
+            {
+                "label": "9 dB/Oct",
+                "value": 1,
+                "type": "num"
+            },
+            {
+                "label": "12 dB/Oct",
+                "value": 2,
+                "type": "num"
+            },
+            {
+                "label": "15 dB/Oct",
+                "value": 3,
+                "type": "num"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 340,
+        "y": 180,
+        "wires": [
+            [
+                "d26184a9d02ae9cd"
+            ]
+        ]
+    },
+    {
+        "id": "e976a0c5539b5851",
+        "type": "ui_numeric",
+        "z": "7d86966d10d47c71",
+        "name": "frequency 1",
+        "label": "",
+        "tooltip": "",
+        "group": "d0210edf282b4ca2",
+        "order": 9,
+        "width": "3",
+        "height": 1,
+        "wrap": false,
+        "passthru": false,
+        "topic": "topic",
+        "topicType": "msg",
+        "format": "{{value}} Hz",
+        "min": "-20",
+        "max": "20000",
+        "step": 1,
+        "className": "",
+        "x": 350,
+        "y": 300,
+        "wires": [
+            [
+                "42562be3ad472680"
+            ]
+        ]
+    },
+    {
+        "id": "69645405f0d0d127",
+        "type": "ui_switch",
+        "z": "7d86966d10d47c71",
+        "name": "Bypass 1",
+        "label": "",
+        "tooltip": "",
+        "group": "d0210edf282b4ca2",
+        "order": 12,
+        "width": "3",
+        "height": 1,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 340,
+        "y": 680,
+        "wires": [
+            [
+                "e9d7d17eeaa5ce79"
+            ]
+        ]
+    },
+    {
+        "id": "43dec873f13af530",
+        "type": "ui_numeric",
+        "z": "7d86966d10d47c71",
+        "name": "Boost/Cut 1",
+        "label": "",
+        "tooltip": "",
+        "group": "d0210edf282b4ca2",
+        "order": 10,
+        "width": "3",
+        "height": 1,
+        "wrap": false,
+        "passthru": false,
+        "topic": "topic",
+        "topicType": "msg",
+        "format": "{{value}}dB",
+        "min": "-20",
+        "max": "20",
+        "step": 1,
+        "className": "",
+        "x": 350,
+        "y": 420,
+        "wires": [
+            [
+                "113ba69ff66db36b"
+            ]
+        ]
+    },
+    {
+        "id": "c42bb665ace5063d",
+        "type": "ui_template",
+        "z": "7d86966d10d47c71",
+        "group": "d0210edf282b4ca2",
+        "name": "type label",
+        "order": 1,
+        "width": "3",
+        "height": "1",
+        "format": "<div><h3 style=\"text-align:center\">TYPE</h3></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 120,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "64c12d54b80b87db",
+        "type": "ui_template",
+        "z": "7d86966d10d47c71",
+        "group": "d0210edf282b4ca2",
+        "name": "slope label",
+        "order": 2,
+        "width": "3",
+        "height": "1",
+        "format": "<div><h3 style=\"text-align:center\">SLOPE</h3></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 130,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "eaf23cbb8c0ecae4",
+        "type": "ui_template",
+        "z": "7d86966d10d47c71",
+        "group": "d0210edf282b4ca2",
+        "name": "frequency label",
+        "order": 3,
+        "width": "3",
+        "height": "1",
+        "format": "<div><h3 style=\"text-align:center\">FREQ</h3></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 140,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2318ac8dfda8c9a2",
+        "type": "ui_template",
+        "z": "7d86966d10d47c71",
+        "group": "d0210edf282b4ca2",
+        "name": "boost/cut label",
+        "order": 4,
+        "width": "3",
+        "height": "1",
+        "format": "<div><h3 style=\"text-align:center\">BOOST/CUT</h3></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 140,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "16358859632df4f9",
+        "type": "ui_template",
+        "z": "7d86966d10d47c71",
+        "group": "d0210edf282b4ca2",
+        "name": "width label",
+        "order": 5,
+        "width": "3",
+        "height": "1",
+        "format": "<div><h3 style=\"text-align:center\">WIDTH</h3></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 130,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d553c831253eaf5b",
+        "type": "ui_template",
+        "z": "7d86966d10d47c71",
+        "group": "d0210edf282b4ca2",
+        "name": "bypass label",
+        "order": 6,
+        "width": "3",
+        "height": "1",
+        "format": "<div><h3 style=\"text-align:center\">BYPASS</h3></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 130,
+        "y": 680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "452ed4c5da9c7ed8",
+        "type": "soundweb-server",
+        "host": "10.0.0.234",
+        "port": "1023",
+        "connection_logging": true,
+        "communication_logging": false
+    },
+    {
+        "id": "d0210edf282b4ca2",
+        "type": "ui_group",
+        "name": "EQ",
+        "tab": "7d1e9ef79062113d",
+        "order": 1,
+        "disp": true,
+        "width": 18,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "7d1e9ef79062113d",
+        "type": "ui_tab",
+        "name": "BSS Soundweb",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]

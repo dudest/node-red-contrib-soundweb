@@ -8,6 +8,18 @@
         "env": []
     },
     {
+        "id": "6c1a549dfc9ecaec",
+        "type": "junction",
+        "z": "d2ab3aa4da536f58",
+        "x": 240,
+        "y": 180,
+        "wires": [
+            [
+                "6a9f20bc48664b6d"
+            ]
+        ]
+    },
+    {
         "id": "399a64d5ae2b8c7e",
         "type": "soundweb-dbGain",
         "z": "d2ab3aa4da536f58",
@@ -16,10 +28,11 @@
         "server": "452ed4c5da9c7ed8",
         "address": "[0,9,3,0,1,0,0,0]",
         "addressType": "bin",
-        "x": 310,
+        "x": 290,
         "y": 120,
         "wires": [
             [
+                "6a9f20bc48664b6d",
                 "6e72a5ecec720faa"
             ]
         ]
@@ -33,8 +46,8 @@
         "tooltip": "",
         "group": "bf3bb3f9d639b54c",
         "order": 1,
-        "width": "6",
-        "height": "1",
+        "width": "0",
+        "height": "0",
         "passthru": false,
         "outs": "all",
         "topic": "topic",
@@ -47,7 +60,8 @@
         "y": 120,
         "wires": [
             [
-                "399a64d5ae2b8c7e"
+                "399a64d5ae2b8c7e",
+                "6c1a549dfc9ecaec"
             ]
         ]
     },
@@ -59,7 +73,7 @@
         "label": "mute",
         "tooltip": "",
         "group": "bf3bb3f9d639b54c",
-        "order": 4,
+        "order": 5,
         "width": 0,
         "height": 0,
         "passthru": true,
@@ -78,7 +92,7 @@
         "animate": false,
         "className": "",
         "x": 130,
-        "y": 320,
+        "y": 360,
         "wires": [
             [
                 "a361ce18cb3c1fc7"
@@ -94,8 +108,8 @@
         "server": "452ed4c5da9c7ed8",
         "address": "[0,9,3,0,1,0,0,1]",
         "addressType": "bin",
-        "x": 310,
-        "y": 320,
+        "x": 290,
+        "y": 360,
         "wires": [
             [
                 "40f8dd5453eb9d33"
@@ -109,8 +123,8 @@
         "name": "",
         "group": "bf3bb3f9d639b54c",
         "order": 2,
-        "width": "3",
-        "height": "1",
+        "width": "2",
+        "height": 1,
         "passthru": false,
         "label": "<",
         "tooltip": "",
@@ -123,7 +137,7 @@
         "topic": "topic",
         "topicType": "msg",
         "x": 130,
-        "y": 200,
+        "y": 240,
         "wires": [
             [
                 "9d3cd3eefa8363ed"
@@ -136,9 +150,9 @@
         "z": "d2ab3aa4da536f58",
         "name": "",
         "group": "bf3bb3f9d639b54c",
-        "order": 3,
-        "width": "3",
-        "height": "1",
+        "order": 4,
+        "width": "2",
+        "height": 1,
         "passthru": false,
         "label": ">",
         "tooltip": "",
@@ -151,7 +165,7 @@
         "topic": "topic",
         "topicType": "msg",
         "x": 130,
-        "y": 260,
+        "y": 300,
         "wires": [
             [
                 "93b01d722d9ce4e4"
@@ -168,7 +182,7 @@
         "address": "[0,9,3,0,1,0,0,3]",
         "addressType": "bin",
         "x": 300,
-        "y": 260,
+        "y": 300,
         "wires": [
             []
         ]
@@ -183,7 +197,7 @@
         "address": "[0,9,3,0,1,0,0,4]",
         "addressType": "bin",
         "x": 310,
-        "y": 200,
+        "y": 240,
         "wires": [
             []
         ]
@@ -197,8 +211,8 @@
         "server": "452ed4c5da9c7ed8",
         "address": "[0,9,3,0,1,3,0,0]",
         "addressType": "bin",
-        "x": 150,
-        "y": 400,
+        "x": 290,
+        "y": 440,
         "wires": [
             [
                 "47e949c5acc19ece"
@@ -211,11 +225,11 @@
         "z": "d2ab3aa4da536f58",
         "name": "",
         "group": "bf3bb3f9d639b54c",
-        "order": 5,
+        "order": 6,
         "width": 0,
         "height": 0,
         "gtype": "gage",
-        "title": "",
+        "title": "RMS Meter",
         "label": "dBu",
         "format": "{{value}}",
         "min": "-30",
@@ -229,8 +243,8 @@
         "seg2": "",
         "diff": false,
         "className": "",
-        "x": 310,
-        "y": 400,
+        "x": 490,
+        "y": 440,
         "wires": []
     },
     {
@@ -244,17 +258,36 @@
         "wires": []
     },
     {
+        "id": "6a9f20bc48664b6d",
+        "type": "ui_text",
+        "z": "d2ab3aa4da536f58",
+        "group": "bf3bb3f9d639b54c",
+        "order": 3,
+        "width": "2",
+        "height": "1",
+        "name": "gain fb",
+        "label": "",
+        "format": "{{msg.payload}}dB",
+        "layout": "row-spread",
+        "className": "",
+        "x": 470,
+        "y": 180,
+        "wires": []
+    },
+    {
         "id": "452ed4c5da9c7ed8",
         "type": "soundweb-server",
         "host": "10.0.0.234",
-        "port": "1023"
+        "port": "1023",
+        "connection_logging": true,
+        "communication_logging": false
     },
     {
         "id": "bf3bb3f9d639b54c",
         "type": "ui_group",
         "name": "Gain",
         "tab": "7d1e9ef79062113d",
-        "order": 1,
+        "order": 2,
         "disp": true,
         "width": "6",
         "collapse": false,
