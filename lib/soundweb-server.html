@@ -7,6 +7,14 @@
         <label for="node-config-input-port"><i class="fa fa-bookmark"></i> Port</label>
         <input type="text" id="node-config-input-port">
     </div>
+    <div class="form-row">
+        <input style="margin:8px 0 10px 102px; width:20px;" type="checkbox" checked id="node-config-input-connection_logging">
+        <label style="width:auto" for="node-config-input-connection_logging"> Log connection status</label>
+    </div>
+    <div class="form-row">
+        <input style="margin:8px 0 10px 102px; width:20px;" type="checkbox" id="node-config-input-communication_logging">
+        <label style="width:auto" for="node-config-input-communication_logging"> Log communications</label>
+    </div>
 </script>
 
 <script type="text/javascript">
@@ -15,6 +23,8 @@
         defaults: {
             host: { value: "", required: true },
             port: { value: 1023, required: true, validate: RED.validators.number() },
+            connection_logging : { value: true },
+            communication_logging: { value: false }
         },
         label: function () {
             return this.host + ":" + this.port;

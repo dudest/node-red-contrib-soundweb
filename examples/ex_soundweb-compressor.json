@@ -348,14 +348,16 @@
         "id": "452ed4c5da9c7ed8",
         "type": "soundweb-server",
         "host": "10.0.0.234",
-        "port": "1023"
+        "port": "1023",
+        "connection_logging": true,
+        "communication_logging": false
     },
     {
         "id": "63eb1d6b748fc43d",
         "type": "ui_group",
         "name": "Compressor",
         "tab": "7d1e9ef79062113d",
-        "order": 2,
+        "order": 3,
         "disp": true,
         "width": "6",
         "collapse": false,

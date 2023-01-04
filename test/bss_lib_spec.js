@@ -112,7 +112,7 @@ describe('bss_lib.js', function() {
             assert.deepEqual(actual, expected);
         });
     });
-    describe('encScalaLinear', function() {
+    describe('encScalarLinear', function() {
         it ('5 should return <buffer 00 00 c3 50>',
         function() {
             var actual = bssLib.encScalarLinear(5);
