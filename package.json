@@ -41,7 +41,7 @@
       "soundweb-frequency": "lib/soundweb-frequency.js",
       "soundweb-speed": "lib/soundweb-speed.js",
       "soundweb-venuePresets": "lib/soundweb-venuePresets.js",
-      "soundweb-parameterPresets": "lib/soundweb-parameterPresets.js",
+      "soundweb-parameterPresets": "lib/soundweb-parameterPresets.js"
     }
   },
   "engines": {
