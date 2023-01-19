@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-soundweb",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A collection of nodes for controlling BSS soundweb devices.",
   "main": "soundweb-server.js",
   "directories": {
