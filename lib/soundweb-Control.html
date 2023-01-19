@@ -1,0 +1,182 @@
+<script type="text/html" data-template-name="soundweb-Control">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-topic"><i class="fa fa-tag"></i> topic</label>
+        <input type="text" id="node-input-topic" placeholder="Leave blank to inherit from input">
+    </div>
+    <div class="form-row">
+        <label for="node-input-server"><i class="fa fa-globe"></i> Server</label>
+        <input type="text" id="node-input-server" placeholder="Server">
+    </div>
+    <div class="form-row">
+        <label for="node-input-command">Command</label>
+        <select style="width:fit-content" type="text" id="node-input-command">
+            <option value="136">set state variable</option>
+            <option value="141">set state variable by percentage</option>
+        </select>
+    </div>
+    <div class="form-row scaleType">
+        <label for="node-input-scale">Scale</label>
+        <select style="width:fit-content" type="text" id="node-input-scale">
+            <option value="0">discrete</option>
+            <option value="1">scalar linear</option>
+            <option value="2">gain (dB fader law)</option>
+            <option value="3">delay</option>
+            <option value="4">frequency</option>
+            <option value="5">speed</option>
+        </select>
+    </div>
+    <div class="form-row">
+        <label for="node-input-address"><i class="fa fa-server"></i> Address</label>
+        <input type="text" id="node-input-address" placeholder="[0,0,0,0,0,0,0,0]">
+        <input type="hidden" id="node-input-addressType">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="soundweb-Control">
+    <h3>Usage:</h3>
+    <p>Sets the value of a control component.</p>
+    <h3>Edit Dialog Properties</h3>
+    <ol>
+        <li>
+            <dt>Name:</dt>
+            <dd>Node name.</dd>
+        </li>
+        <li>
+            <dt>Topic:</dt>
+            <dd>Sets <code>msg.topic</code>. Leave blank to inherit from input.</dd>
+        </li>
+        <li>
+            <dt>Server:</dt>
+            <dd>Configuration node.</dd>
+        </li>
+        <li>
+            <dt>Command:</dt>
+            <dd>Command type.</dd>
+        </li>
+        <li>
+            <dt>Scale:</dt>
+            <dd>Scale type.</dd>
+        </li>
+        <li>
+            <dt>Address:</dt>
+            <dd>A buffer of exactly 8 bytes. (specify in <em>decimal</em> format)</dd>
+            <dd>
+                <ol>
+                    <li>Node Address (2 bytes)</li>
+                    <li>Virtual Device (1 byte)</li>
+                    <li>Object ID (3 bytes)</li>
+                    <li>Parameter ID (2 bytes)</li>
+                </ol>
+            </dd>
+        </li>
+    </ol>
+
+    <h3>Inputs</h3>
+    <dl class="message-properties">
+        <dt>payload
+            <span class="property-type">number</span>
+        </dt>
+        <dd>value to set</dd>
+    </dl>
+    <h3>Outputs</h3>
+    <dl class="message-properties">
+        <dt>payload <span class="property-type">number</span></dt>
+        <dd>feedback</dd>
+    </dl>
+    <h3>Reference</h3>
+    <p>Reserved characters and byte replacement. Please consider this when entering the edit dialog's <code>address</code> property.</p>
+    <table>
+        <tr>
+            <th>TYPE</th>
+            <th>HEX</th>
+            <th>DEC</th>
+            <th>HEX replacement</th>
+            <th>DEC replacement</th>
+        </tr>
+        <tr>
+            <th>STX</th>
+            <th>0x02</th>
+            <th>2</th>
+            <th>0x1B, 0x82</th>
+            <th>27, 130</th>
+        </tr>
+        <tr>
+            <th>ETX</th>
+            <th>0x03</th>
+            <th>3</th>
+            <th>0x1B, 0x83</th>
+            <th>27, 131</th>
+        </tr>
+        <tr>
+            <th>ACK</th>
+            <th>0x06</th>
+            <th>6</th>
+            <th>0x1B, 0x86</th>
+            <th>27, 134</th>
+        </tr>
+        <tr>
+            <th>NAK</th>
+            <th>0x15</th>
+            <th>21</th>
+            <th>0x1B, 0x95</th>
+            <th>27, 149</th>
+        </tr>
+        <tr>
+            <th>Escape</th>
+            <th>0x1B</th>
+            <th>27</th>
+            <th>0x1B, 0x9B</th>
+            <th>27, 155</th>
+        </tr>
+    </table>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType("soundweb-Control",{
+        category: 'BSS Soundweb',
+        color: '#1aab6a',
+        defaults: {
+            name: { value: "" },
+            topic: { value: "" },
+            server: {
+                value: "",
+                type: "soundweb-server"
+            },
+            command: { value: "136" },
+            scale: { value: "2" },
+            address: {
+                value: "",
+                required: true,
+            },
+            addressType: { value: "" }
+        },
+        inputs:1,
+        outputs:1,
+        icon: "bss_logo.png",
+        label: function() {
+            return this.name || this.topic || "soundweb-Control";
+        },
+        oneditprepare: function() {
+            var updateOptions = function () {
+                let command = $("#node-input-command").val();
+                if (command === "136") {
+                    $(".scaleType").show();
+                }
+                else {
+                    $(".scaleType").hide();
+                }
+            }
+            updateOptions();
+            $("#node-input-command").change(updateOptions);
+            $("#node-input-address").typedInput({
+                type: "bin",
+                types: ["bin"],
+                typeField: "#node-input-addressType"
+            });
+        }
+    });
+</script>

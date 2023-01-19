@@ -1,0 +1,66 @@
+<script type="text/html" data-template-name="soundweb-Presets">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-server"><i class="fa fa-globe"></i> Server</label>
+        <input type="text" id="node-input-server" placeholder="Server">
+    </div>
+    <div class="form-row">
+        <label for="node-input-command">Command</label>
+        <select style="width:fit-content" type="text" id="node-input-command">
+            <option value="140">Parameter Preset</option>
+            <option value="139">Venue Preset</option>
+        </select>
+    </div>
+</script>
+
+<script type="text/html" data-help-name="soundweb-Presets">
+    <h3>Usage</h3>
+    <p>Recalls a preset by it's index number.</p>
+    <h3>Edit Dialog Properties</h3>
+    <ol>
+        <li>
+            <dt>Name:</dt>
+            <dd>Node name.</dd>
+        </li>
+        <li>
+            <dt>Server:</dt>
+            <dd>Configuration node.</dd>
+        </li>
+        <li>
+            <dt>Command:</dt>
+            <dd>Preset type.</dd>
+        </li>
+    </ol>
+    <h3>Input</h3>
+    <dl class="message-properties">
+        <dt>payload
+            <span class="property-type">number</span>
+        </dt>
+        <dd>Preset to recall.</dd>
+    </dl>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType("soundweb-Presets",{
+        category: 'BSS Soundweb',
+        color: '#1aab6a',
+        defaults: {
+            name: { value: "" },
+            topic: { value: "" },
+            server: {
+                value: "",
+                type: "soundweb-server"
+            },
+            command: { value: "140" }
+        },
+        inputs:1,
+        outputs:0,
+        icon: "bss_logo.png",
+        label: function() {
+            return this.name||"soundweb-Presets";
+        }
+    });
+</script>
