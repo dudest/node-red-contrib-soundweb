@@ -1,3 +1,9 @@
+[![platform](https://img.shields.io/badge/platform-Node--RED-red)](https://nodered.org)
+![npm](https://img.shields.io/npm/v/node-red-contrib-soundweb.svg)
+![license](https://img.shields.io/npm/l/node-red-contrib-soundweb.svg)
+![Npm package total downloads](https://badgen.net/npm/dt/node-red-contrib-soundweb)
+![github-issues](https://img.shields.io/github/issues/dudest/node-red-contrib-soundweb.svg)
+
 # node-red-contrib-soundweb
 A collection of nodes for controlling BSS Soundweb devices.
 
