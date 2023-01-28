@@ -8,6 +8,8 @@
 
 A collection of nodes for controlling BSS Soundweb devices.
 
+**IMPORTANT: Flow breaking changes were introduced in v1.0.3. If you are updating from v1.0.2 or below you will need to you will need to replace nodes with their latest equivalent. Rather than have a node for each scale type and/or command type, functionality has been consolidated into as few nodes as possible. This is to simplify maintenance and updates.**
+
 ![screenshot](images/soundweb_screenshot.png)
 
 ---
@@ -67,7 +69,12 @@ There are six scale types:
 
 ## soundweb-Presets
 
-Node for recalling presets by index number. This node can recall *parameter* and *venue* presets.
+Node for recalling presets by index number.
+
+There are two command types:
+
+- parameter preset
+- venue preset
 
 ![soundweb-Presets edit dialog](images/soundweb-Preset_edit.png)
 
