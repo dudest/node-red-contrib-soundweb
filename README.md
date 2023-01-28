@@ -5,9 +5,10 @@
 ![github-issues](https://img.shields.io/github/issues/dudest/node-red-contrib-soundweb.svg)
 
 # node-red-contrib-soundweb
+
 A collection of nodes for controlling BSS Soundweb devices.
 
-**IMPORTANT: v1.0.3 is a flow breaking update. Rather than have a node for each scale type and/or command type, functionality has been consolidated into as few nodes as possible. This is to simplify maintenance and updates.**
+![screenshot](images/soundweb_screenshot.png)
 
 ---
 
@@ -70,6 +71,8 @@ Node for recalling presets by index number. This node can recall *parameter* and
 
 ![soundweb-Presets edit dialog](images/soundweb-Preset_edit.png)
 
+---
+
 # Resources
 
 - [Soundweb London DI Kit](https://bssaudio.com/en/site_elements/soundweb-london-di-kit)
@@ -93,6 +96,8 @@ The following bytes have special meanings. The node suite will automatically han
 | ACK    | 0x06 | 6    | 0x1B, 0x86      | 27, 134         |
 | NAK    | 0x15 | 21   | 0x1B, 0x95      | 27, 149         |
 | Escape | 0x1B | 27   | 0x1B, 0x9B      | 27, 155         |
+
+---
 
 # Feature Requests / Bug Reporting
 
