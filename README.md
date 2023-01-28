@@ -34,15 +34,41 @@ $ npm install node-red-contrib-soundweb
 # then restart node-red
 ```
 
-## Feature Requests
-
-Any feature requests can be submitted to the repository's [discussions/ideas](https://github.com/dudest/node-red-contrib-soundweb/discussions/categories/ideas) section.
-
-## Bug Reporting
-
-Please report any bugs or issues to the repository [here](https://github.com/dudest/node-red-contrib-soundweb/issues).
-
 ---
+
+# Nodes
+
+## soundweb-server
+
+Configuration node that manages connection to BSS device.
+
+![soundweb-server edit dialog](images/soundweb-server_edit.png)
+
+## soundweb-Control
+
+Node for setting a controls value.
+
+There are two command types:
+
+- set state variable
+- set state variable by percentage
+
+There are six scale types:
+
+- discrete
+- scalar linear
+- gain (dB fader law)
+- delay
+- frequency
+- speed
+
+![soundweb-Control edit dialog](images/soundweb-Control_edit.png)
+
+## soundweb-Presets
+
+Node for recalling presets by index number. This node can recall *parameter* and *venue* presets.
+
+![soundweb-Presets edit dialog](images/soundweb-Preset_edit.png)
 
 # Resources
 
@@ -68,3 +94,6 @@ The following bytes have special meanings. The node suite will automatically han
 | NAK    | 0x15 | 21   | 0x1B, 0x95      | 27, 149         |
 | Escape | 0x1B | 27   | 0x1B, 0x9B      | 27, 155         |
 
+# Feature Requests / Bug Reporting
+
+Please report any bugs or issues to the repository [here](https://github.com/dudest/node-red-contrib-soundweb/issues).
