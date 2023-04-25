@@ -1,8 +1,8 @@
 [![platform](https://img.shields.io/badge/platform-Node--RED-red)](https://nodered.org)
-![npm](https://img.shields.io/npm/v/node-red-contrib-soundweb.svg)
-![license](https://img.shields.io/npm/l/node-red-contrib-soundweb.svg)
-![Npm package total downloads](https://badgen.net/npm/dt/node-red-contrib-soundweb)
-![github-issues](https://img.shields.io/github/issues/dudest/node-red-contrib-soundweb.svg)
+[![npm package version](https://img.shields.io/npm/v/node-red-contrib-soundweb)](https://www.npmjs.com/package/node-red-contrib-soundweb)
+![license](https://img.shields.io/npm/l/node-red-contrib-soundweb)
+[![Npm package total downloads](https://badgen.net/npm/dt/node-red-contrib-soundweb)](https://www.npmjs.com/package/node-red-contrib-soundweb)
+[![github-issues](https://img.shields.io/github/issues/dudest/node-red-contrib-soundweb)](https://github.com/dudest/node-red-contrib-soundweb/issues)
 
 # node-red-contrib-soundweb
 
