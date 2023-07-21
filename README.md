@@ -8,22 +8,31 @@
 
 A collection of nodes for controlling BSS Soundweb devices.
 
-**IMPORTANT: Flow breaking changes were introduced in v1.0.3. If you are updating from v1.0.2 or below you will need to you will need to replace nodes with their latest equivalent. Rather than have a node for each scale type and/or command type, functionality has been consolidated into as few nodes as possible. This is to simplify maintenance and updates.**
-
 ![screenshot](images/soundweb_screenshot.png)
 
 ---
 
-# Getting Started
+## Release Notes
 
-## Prerequisites
+| Version | Description |
+| ----------- | ----------- |
+| 1.0.6 | Assign HiQnet address programatically. Documentation|
+| 1.0.5 | Documentation. |
+| 1.0.4 | Documentation. |
+| 1.0.3 | IMPORTANT: Flow breaking changes were introduced in v1.0.3. If you are updating from v1.0.2 or below you will need to you will need to replace nodes with their latest equivalent. Rather than have a node for each scale type and/or command type, functionality has been consolidated into as few nodes as possible. This is to simplify maintenance and updates. |
+
+---
+
+## Getting Started
+
+### Prerequisites
 
 - [Node.js](https://nodejs.org/en/) v12.13.0 or newer
 - [Node-RED](https://nodered.org) v3.0.1 or newer
 
 *untested on earlier versions*
 
-## Installation
+### Installation
 
 Install via Node-RED Manage Palette
 
@@ -39,15 +48,15 @@ $ npm install node-red-contrib-soundweb
 
 ---
 
-# Nodes
+## Nodes
 
-## soundweb-server
+### soundweb-server
 
 Configuration node that manages connection to BSS device.
 
 ![soundweb-server edit dialog](images/soundweb-server_edit.png)
 
-## soundweb-Control
+### soundweb-Control
 
 Node for setting a controls value.
 
@@ -67,7 +76,7 @@ There are six scale types:
 
 ![soundweb-Control edit dialog](images/soundweb-Control_edit.png)
 
-## soundweb-Presets
+### soundweb-Presets
 
 Node for recalling presets by index number.
 
@@ -80,12 +89,12 @@ There are two command types:
 
 ---
 
-# Resources
+## Resources
 
 - [Soundweb London DI Kit](https://bssaudio.com/en/site_elements/soundweb-london-di-kit)
 - [Soundweb London 3rd Party Control](https://help.harmanpro.com/Documents/135/Soundweb%20London%203rd%20Party%20Control.pdf)
 
-## Address Property
+### Address Property
 
 The address property is a buffer of exactly 8 bytes. it is comprised of:
 
@@ -106,6 +115,6 @@ The following bytes have special meanings. The node suite will automatically han
 
 ---
 
-# Feature Requests / Bug Reporting
+## Feature Requests / Bug Reporting
 
 Please report any bugs or issues to the repository [here](https://github.com/dudest/node-red-contrib-soundweb/issues).
