@@ -46,6 +46,6 @@
     "node-red-node-test-helper": "^0.3.0"
   },
   "dependencies": {
-    "hiqnet": "^0.0.4"
+    "hiqnet": "^0.0.5"
   }
 }
