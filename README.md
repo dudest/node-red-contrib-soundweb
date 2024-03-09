@@ -15,11 +15,12 @@ A collection of nodes for controlling BSS Soundweb devices.
 ## Release Notes
 
 | Version | Description |
-| ----------- | ----------- |
-| 1.0.6 | Assign HiQnet address programatically. Documentation|
-| 1.0.5 | Documentation. |
-| 1.0.4 | Documentation. |
-| 1.0.3 | IMPORTANT: Flow breaking changes were introduced in v1.0.3. If you are updating from v1.0.2 or below you will need to you will need to replace nodes with their latest equivalent. Rather than have a node for each scale type and/or command type, functionality has been consolidated into as few nodes as possible. This is to simplify maintenance and updates. |
+| :-----: | ----------- |
+| 1.0.7   | Updated dependencies |
+| 1.0.6   | Assign HiQnet address programatically. Documentation |
+| 1.0.5   | Documentation. |
+| 1.0.4   | Documentation. |
+| 1.0.3   | IMPORTANT: Flow breaking changes were introduced in v1.0.3. If you are updating from v1.0.2 or below you will need to you will need to replace nodes with their latest equivalent. Rather than have a node for each scale type and/or command type, functionality has been consolidated into as few nodes as possible. This is to simplify maintenance and updates. |
 
 ---
 

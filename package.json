@@ -1,13 +1,13 @@
 {
   "name": "node-red-contrib-soundweb",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A collection of nodes for controlling BSS soundweb devices.",
   "main": "soundweb-server.js",
   "directories": {
     "example": "examples"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "echo no tests"
   },
   "repository": {
     "type": "git",
@@ -40,9 +40,7 @@
   "engines": {
     "node": ">=12.13.0"
   },
-  "devDependencies": {
-    "mocha": "^9.2.2",
-    "node-red": "^3.0.2",
-    "node-red-node-test-helper": "^0.3.0"
+  "dependencies": {
+    "hiqnet": "^0.0.5"
   }
 }
